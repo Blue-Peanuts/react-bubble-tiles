@@ -1,7 +1,7 @@
 
 # Bubble Tiles - A React Component for Interactive Grid of Circles
 
-Bubble Tiles is a customizable React component that creates an interactive grid of circles. These circles dynamically change in size based on their proximity to the mouse cursor. It's a fun and engaging way to display information or create interactive data visualizations.
+Bubble Tiles is a customizable React component that creates an interactive grid of circles. These circles dynamically change in size based on their proximity to the mouse cursor. It's a simple but fun component to add to any website.
 
 ## Installation
 
