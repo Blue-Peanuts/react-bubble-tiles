@@ -1,3 +1,8 @@
+## Interactive Demo
+
+See Bubble Tiles in action! Try out our interactive demo:
+
+[Demo](https://your-demo-url.com)
 
 # Bubble Tiles - A React Component for Interactive Grid of Circles
 
