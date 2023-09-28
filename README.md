@@ -1,12 +1,11 @@
-## Interactive Demo
-
-See Bubble Tiles in action! Try out our interactive demo:
-
-[Demo](https://your-demo-url.com)
-
-# Bubble Tiles - A React Component for Interactive Grid of Circles
+# Bubble Tiles - A Mouse Cursor Effect Component
 
 Bubble Tiles is a customizable React component that creates an interactive grid of circles. These circles dynamically change in size based on their proximity to the mouse cursor. It's a simple but fun component to add to any website.
+
+## Interactive Demo
+
+See Bubble Tiles in action! Try out the interactive demo:
+[Demo](https://localhost:5000)
 
 ## Installation
 
