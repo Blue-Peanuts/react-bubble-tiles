@@ -1,27 +1,64 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Bubble Tiles - A React Component for Interactive Grid of Circles
 
-Currently, two official plugins are available:
+Bubble Tiles is a customizable React component that creates an interactive grid of circles. These circles dynamically change in size based on their proximity to the mouse cursor. It's a fun and engaging way to display information or create interactive data visualizations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+To use the Bubble Tiles component in your React application, follow these simple steps:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Copy the `src/bubble_tiles` directory from this repository.
+2. Paste the copied directory into your React app's source code.
 
-- Configure the top-level `parserOptions` property like this:
+That's it! You're now ready to start using Bubble Tiles in your project.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Usage
+
+Here's how you can use the Bubble Tiles component in your React application:
+
+```jsx
+import React from 'react';
+import BubbleTiles from './bubble_tiles'; // Adjust the import path as needed
+
+function App() {
+  return (
+    <div>
+      {/* Other components or content */}
+      <BubbleTiles
+        sections={10} // The number of sections in the grid
+        gridToWindowRatio={0.8} // Optional: Adjust the grid size relative to the window
+        zIndex={1} // Optional: Z-index for the component
+        color="#3498db" // Optional: Circle color
+        borderRadius="50%" // Optional: Circle border-radius
+        bubbleSize={50} // Optional: Initial bubble size
+      />
+      {/* Other components or content */}
+    </div>
+  );
+}
+
+export default App;
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Props
+
+The Bubble Tiles component accepts the following props:
+
+- `sections` (optional): The number of rows/columns in the grid. (Default: `10`)
+- `gridToWindowRatio` (optional): Adjusts the grid size relative to the window's width. (Default: `1/3`)
+- `zIndex` (optional): The z-index for the component. (Default: `-1`)
+- `color` (optional): The color of the circles. (Default: `#ffffff`)
+- `borderRadius` (optional): The border-radius of the circles. (Default: `'50%'`)
+- `bubbleSize` (optional): The initial size of the circles. (Default: `100`)
+
+## Example
+
+You can customize the component's appearance and behavior by adjusting the props according to your requirements. Experiment with different values to achieve the desired effect.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to contribute, report issues, or suggest improvements to this project. If you have any questions or need assistance, please don't hesitate to reach out.
