@@ -5,7 +5,7 @@ Bubble Tiles is a customizable React component that creates an interactive grid 
 ## Interactive Demo
 
 See Bubble Tiles in action! Try out the interactive demo:
-[Demo](https://blue-peanuts.github.io/react-bubble-tiles/)
+<a href="https://blue-peanuts.github.io/react-bubble-tiles/" target="_blank">Demo</a>
 
 ## Installation
 
