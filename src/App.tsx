@@ -1,7 +1,7 @@
 
 import BubbleTiles from './bubble_tiles/BubbleTiles'
 import './App.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import React from 'react'
 
 /*
@@ -20,6 +20,11 @@ function App() {
     const [color, setColor] = useState('#ffffff');
     const [borderRadius, setBorderRadius] = useState('50%');
     const [bubbleSize, setBubbleSize] = useState(100);
+
+    useEffect(() => {
+        document.title = 'React Bubble Tiles';
+    }, []);
+
 
     const optionStyle = {
         display: 'flex',
