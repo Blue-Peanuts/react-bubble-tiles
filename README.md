@@ -27,7 +27,7 @@ function App() {
       <BubbleTiles
         sections={10} // The number of sections in the grid
         gridToWindowRatio={0.8} // Optional: Adjust the grid size relative to the window
-        zIndex={1} // Optional: Z-index for the component
+        zIndex={-10} // Optional: Z-index for the component
         color="#3498db" // Optional: Circle color
         borderRadius="50%" // Optional: Circle border-radius
         bubbleSize={50} // Optional: Initial bubble size
