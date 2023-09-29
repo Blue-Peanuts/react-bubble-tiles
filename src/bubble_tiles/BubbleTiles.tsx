@@ -97,9 +97,9 @@ function BubbleTiles(props: BubbleTilesProps) {
                         borderRadius: bubbleBorderRadius,
                         aspectRatio: '1/1',
                     }
-                    return <div style={borderStyle}>
+                    return <div key={i} style={borderStyle}>
                         {
-                            <div key={i} style={bubbleStyle} />
+                            <div style={bubbleStyle} />
                         }
                     </div>
                 })
