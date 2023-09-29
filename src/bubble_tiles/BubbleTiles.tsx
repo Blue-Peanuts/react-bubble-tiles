@@ -36,18 +36,17 @@ function BubbleTiles(props: BubbleTilesProps) {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-    const sections = props.sections? props.sections : 10;
-    const gridToWindowRatio = props.gridToWindowRatio? props.gridToWindowRatio : 1/3;
-    const zIndex = props.zIndex? props.zIndex : -1;
-    const bubbleColor = props.color? props.color : '#ffffff';
-    const bubbleBorderRadius = props.borderRadius? props.borderRadius : '50%';
-    const bubbleSize = props.bubbleSize? props.bubbleSize : 100;
+    const sections = props.sections ? props.sections : 10;
+    const gridToWindowRatio = props.gridToWindowRatio ? props.gridToWindowRatio : 1 / 3;
+    const zIndex = props.zIndex ? props.zIndex : -1;
+    const bubbleColor = props.color ? props.color : '#ffffff';
+    const bubbleBorderRadius = props.borderRadius ? props.borderRadius : '50%';
+    const bubbleSize = props.bubbleSize ? props.bubbleSize : 100;
 
-    
+
     const gridWidth = windowsWidth * gridToWindowRatio;
 
     const frameStyle = {
-        zIndex: zIndex,
         overflow: 'hidden',
         height: '100vh',
         width: '100vw',
@@ -68,42 +67,46 @@ function BubbleTiles(props: BubbleTilesProps) {
     } as React.CSSProperties
 
 
-    return <div style={frameStyle}>
-        <div style={gridStyle}>
-            {
-                Array.from(Array(sections ** 2).keys()).map((i) => {
+    return <div style={{
+        zIndex: zIndex,
+    }}>
+        <div style={frameStyle}>
+            <div style={gridStyle}>
+                {
+                    Array.from(Array(sections ** 2).keys()).map((i) => {
 
-                    const x = i % sections;
-                    const y = Math.floor(i / sections);
-                    const gridPosX = roundToNearest(mousePos.x - gridWidth / 2, gridWidth / sections);
-                    const gridPosY = roundToNearest(mousePos.y + scrollPosition - gridWidth / 2, gridWidth / sections);
-                    const posX = gridPosX + (x + 0.5) * gridWidth / sections;
-                    const posY = gridPosY + (y + 0.5) * gridWidth / sections;
-                    const distX = Math.abs(posX - mousePos.x);
-                    const distY = Math.abs(posY - mousePos.y - scrollPosition);
-                    const dist = Math.sqrt(distX * distX + distY * distY);
+                        const x = i % sections;
+                        const y = Math.floor(i / sections);
+                        const gridPosX = roundToNearest(mousePos.x - gridWidth / 2, gridWidth / sections);
+                        const gridPosY = roundToNearest(mousePos.y + scrollPosition - gridWidth / 2, gridWidth / sections);
+                        const posX = gridPosX + (x + 0.5) * gridWidth / sections;
+                        const posY = gridPosY + (y + 0.5) * gridWidth / sections;
+                        const distX = Math.abs(posX - mousePos.x);
+                        const distY = Math.abs(posY - mousePos.y - scrollPosition);
+                        const dist = Math.sqrt(distX * distX + distY * distY);
 
-                    const borderStyle = {
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }
-
-                    const size= `${Math.max(0, (1 - (dist / gridWidth) * 2) * bubbleSize)}%`;
-
-                    const bubbleStyle = {
-                        height: size,
-                        backgroundColor: bubbleColor,
-                        borderRadius: bubbleBorderRadius,
-                        aspectRatio: '1/1',
-                    }
-                    return <div key={i} style={borderStyle}>
-                        {
-                            <div style={bubbleStyle} />
+                        const borderStyle = {
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
                         }
-                    </div>
-                })
-            }
+
+                        const size = `${Math.max(0, (1 - (dist / gridWidth) * 2) * bubbleSize)}%`;
+
+                        const bubbleStyle = {
+                            height: size,
+                            backgroundColor: bubbleColor,
+                            borderRadius: bubbleBorderRadius,
+                            aspectRatio: '1/1',
+                        }
+                        return <div key={i} style={borderStyle}>
+                            {
+                                <div style={bubbleStyle} />
+                            }
+                        </div>
+                    })
+                }
+            </div>
         </div>
     </div>
 }

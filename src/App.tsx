@@ -37,11 +37,14 @@ function App() {
 
     return (
         <>
+            <BubbleTiles sections={sections} gridToWindowRatio={gridToWindowRatio} color={color} borderRadius={borderRadius} bubbleSize={bubbleSize} />
             <div style={
                 {
                     display: 'flex',
+                    position: 'relative',
                     flexDirection: 'column',
                     alignItems: 'start',
+                    zIndex: 10,
                 }
             }>
                 <div style={optionStyle}>
@@ -65,7 +68,6 @@ function App() {
                     <input type="number" value={bubbleSize} onChange={(e) => setBubbleSize(parseInt(e.target.value))} />
                 </div>
             </div>
-            <BubbleTiles sections={sections} gridToWindowRatio={gridToWindowRatio} color={color} borderRadius={borderRadius} bubbleSize={bubbleSize} />
         </>
     )
 }
